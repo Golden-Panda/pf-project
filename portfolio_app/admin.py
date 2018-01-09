@@ -1,4 +1,15 @@
 from django.contrib import admin
-from .models import Portfolio
+from django import forms
+from django.contrib.admin.widgets import FilteredSelectMultiple
+from .models import Portfolio, PortfolioImage
 # Register your models here.
-admin.site.register(Portfolio)
+
+class PortfolioImageInline(admin.TabularInline):
+    model = PortfolioImage
+    extra=1
+class PortfolioAdmin(admin.ModelAdmin):
+    inlines = [
+        PortfolioImageInline,
+    ]
+
+admin.site.register(Portfolio,PortfolioAdmin)
