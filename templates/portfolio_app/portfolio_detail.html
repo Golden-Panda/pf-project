@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+{% block title %}
+    {{object.title}}
+{% endblock title %}
+
+
+{% block mainbody %}
+    <h6>{{object.id}}</h6>
+    <h2>{{object.title}}</h2>
+    <h3>slug:{{object.slug}}</h3>
+    <h4>created: {{ object.created }} </h4>
+    <h4>modified: {{ object.modified}} </h4>
+    <p>object.description</p>
+    <a href={{object.link}}>{{object.link}}</a>
+
+{% endblock mainbody %}
+    
