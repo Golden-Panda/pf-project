@@ -12,8 +12,14 @@
     <h3>slug:{{object.slug}}</h3>
     <h4>created: {{ object.created }} </h4>
     <h4>modified: {{ object.modified}} </h4>
-    <p>object.description</p>
+    <p>{{object.description}}</p>
     <a href={{object.link}}>{{object.link}}</a>
+</br>
+    {% for image in object.image.all  %}
+    <a href={{image.image.url}} target="_blank"><img src="{{image.image.url}} " width="150" height="150"/></br></a>
+        
+    {% endfor %}
+        
 
 {% endblock mainbody %}
     
