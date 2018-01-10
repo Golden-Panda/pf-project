@@ -8,6 +8,7 @@ body {
 }
 
 .navbar {
+  border-top: 1px solid #999;
   margin-bottom: 0;
 }
 
