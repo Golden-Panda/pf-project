@@ -1,17 +1,27 @@
 {% extends 'base.html' %}
 
 {% block title %}
-Portfolio list
+ALL PORTOFOLIOS
 {% endblock title %}
 
 {% block mainbody %}
-<ul>
-    {% for portfolio in object_list %}
-    <li>
-        <a href={{portfolio.slug}}>{{portfolio.title}}</a>
-    </li>
-    {% empty %}
-    <h2>nothing foundd</h2>
-    {% endfor %}
-</ul>
+<main role="main">
+
+    <div class="album text-muted">
+        <div class="container">
+            <div class="row">
+            {% for portfolio in object_list  %}
+            <div class="card">
+                <img src="{{portfolio.image.all.first.image.url}}" alt="Card image cap">
+                <p class="card-text">{{portfolio.description|striptags|truncatewords:20}}</p>
+                <a class="btn btn-dark" href="{{portfolio.slug}}" role="button">Подробнее</a>
+            </div>
+            {% empty %}
+            <h2>HELL NA!</h2>
+            {% endfor %}       
+            </div>      
+        </div>
+    </div>
+
+</main>
 {% endblock mainbody %}

@@ -1,22 +1,79 @@
-<!DOCTYPE <!DOCTYPE html>
+<!DOCTYPE html>
  {% load bootstrap4 %}
+ {% load static %}
+
 <html>
 <head>
    
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>{% block title %} Portfolio            
         {% endblock title %}
      </title>
-    
-    {% bootstrap_javascript %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/soldier.css' %}" />
+    <link href="{% static 'css/album.css' %}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    {% bootstrap_javascript jquery=1 %}
     {% bootstrap_css %}
+    
 </head>
 <body>
-
+    <header>
+        <div class="collapse bg-dark" id="navbarHeader">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 py-4">
+                        <h4 class="text-white">About</h4>
+                        <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few
+                            sentences long so folks can pick up some informative tidbits. Then, link them off to some social
+                            networking sites or contact information.</p>
+                    </div>
+                    <div class="col-sm-4 py-4">
+                        <h4 class="text-white">Contact</h4>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="#" class="text-white">Follow on Twitter</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-white">Like on Facebook</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-white">Email me</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="navbar navbar-dark bg-dark">
+            <div class="container d-flex justify-content-between">
+                <a href="#" class="navbar-brand">PORTFOLIO</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </div>
+    </header>
 {% block mainbody %}
-    <h1>sorry notgins found</h1>
+    
 {% endblock mainbody %}
-        
+<footer class="text-muted">
+     
+    <div class="container">
+        <div class="col justify-content-center">
+        <p align="center">
+            <a class="badge badge-pill badge-dark" style="padding:0.6rem;" href="#">Наверх</a>
+        </p>
+        </div>
+    </div>
+    <hr>
+    <div class="col justify-content-center">
+        <p align="center"><a class="copyright" href="https://github.com/dokazhi" target="_blank">MADE <i class="material-icons">favorite</i> WITH</a></p>
+    </div>
+</footer>
+
+<a href="#"><div class="soldier"></div></a>
 </body>
 </html>

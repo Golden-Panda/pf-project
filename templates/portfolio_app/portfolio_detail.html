@@ -12,7 +12,7 @@
     <h3>slug:{{object.slug}}</h3>
     <h4>created: {{ object.created }} </h4>
     <h4>modified: {{ object.modified}} </h4>
-    <p>{{object.description}}</p>
+    <p>{{object.description|safe}}</p>
     <a href={{object.link}}>{{object.link}}</a>
 </br>
     {% for image in object.image.all  %}
