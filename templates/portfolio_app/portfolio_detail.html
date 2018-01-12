@@ -2,24 +2,55 @@
 {% load bootstrap4 %}
 
 {% block title %}
-    {{object.title}}
+    Детальная страница | {{object.title}}
 {% endblock title %}
 
 
 {% block mainbody %}
-    <h6>{{object.id}}</h6>
-    <h2>{{object.title}}</h2>
-    <h3>slug:{{object.slug}}</h3>
-    <h4>created: {{ object.created }} </h4>
-    <h4>modified: {{ object.modified}} </h4>
-    <p>{{object.description|safe}}</p>
-    <a href={{object.link}}>{{object.link}}</a>
-</br>
-    {% for image in object.image.all  %}
-    <a href={{image.image.url}} target="_blank"><img src="{{image.image.url}} " width="250" height="250"/></br></a>
+<div class="slider">
+     {% for image in object.image.all %}
+    <input type="radio" name="slide_switch" id="id{{image.id}}" checked="checked"/>
+    <label for="id{{image.id}}">
+        <img src="{{image.image.url}}" width="100" height="60" />
+    </label>
+    <img src="{{image.image.url}}" />
+    {% endfor %}    
+</div>
+<main role="main">
+<div class="album">
+    <div class="container">
+    <div class="row">
         
-    {% endfor %}
-        
+        <div class="col-sm-12 blog-main">
 
-{% endblock mainbody %}
+            <div class="blog-post">
+                     
+                <h2 class="blog-post-title">{{object.title}}</h2>
+                <p class="blog-post-meta">Опубликовано: {{object.created| date:"d/m/y"}}
+                <br>Последние изменение: {{object.modified| date:"d/m/y"}}</p>
+                <hr>
+                    <div class="description">
+                        {{object.description|safe}}
+                    </div>
+                    
+                    
+            </div>
+            <a class="btn btn-primary" href={{object.link}}>Посмотреть проект</a>
+            <!-- /.blog-post -->
+
+            
+
+        </div>
+        <!-- /.blog-main -->
+
+                   
+
+    </div>
+    </div>
+    <!-- /.row -->
+    </div>
+
+</main>
+<!-- /.container -->
+   {% endblock mainbody %}
     
