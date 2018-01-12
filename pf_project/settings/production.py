@@ -26,7 +26,7 @@ SECRET_KEY = 'wt1v^05^^m^aa1)*$ztnh$n^3&k=-%r+qv0d(&2--qoqm(ok8)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = [dokazhi-pf.herokuapp.com]
+ALLOWED_HOSTS = ['dokazhi-pf.herokuapp.com',]
 
 
 # Application definition
