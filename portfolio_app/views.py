@@ -17,8 +17,3 @@ class PortflioListView(ListView):
         return context
 
 
-def homeview(request):
-    content={'check':'naa'}
-    if request.method=="GET":
-        content['check']='shit'
-    return render(request,'portfolio_app/home.html',content)
